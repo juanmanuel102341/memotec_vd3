@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CE00B48F-910C-180F-F723-DA4B775AD7B3}</ProjectGuid>
+    <ProjectGuid>{C60E7A35-926D-CCFB-4EF5-72B6962C6663}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,9 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\Boton.cs" />
-     <Compile Include="Assets\scripts\Carta.cs" />
-     <Compile Include="Assets\scripts\Main.cs" />
+     <Compile Include="Assets\scripts\antes\Boton.cs" />
+     <Compile Include="Assets\scripts\antes\Carta.cs" />
+     <Compile Include="Assets\scripts\antes\Main.cs" />
+     <Compile Include="Assets\scripts\despues\Carga.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
