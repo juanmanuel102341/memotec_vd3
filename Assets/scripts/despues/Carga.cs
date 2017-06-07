@@ -8,34 +8,29 @@ using UnityEngine;
 public class Carga : MonoBehaviour {
 	
 	public List<Material>listaSimbolos=new List<Material>(); 
-	public delegate void finish(List<Material>lista);
-	private List<Material>listaSimbolos2=new List<Material>(); 
+	public delegate void finish( List<Material> material_lista);
+	public static int index=0;
+
+	private List<Material>CurrentListaSimbolos=new List<Material>(); 
 	private List<int>currentIndex2=new List<int>();
-	//public static event finish onFinish;
+
+	public static event finish onFinish;
 	void Awake(){
-		
-	}
-	void Start () {
 		int tamanioLista=listaSimbolos.Count;
 		//Random_list();	
 		List<Material> aux=listaSimbolos;
-
 		for(int i=0;i<tamanioLista;i++){
-			Debug.Log(string.Format("lista anterior{0}",aux[i])); 
+			Material m =MetodoInicial(listaSimbolos);
+			CurrentListaSimbolos.Add(m);	//guardas	
+			listaSimbolos.Remove(m);//removes	
+			//Debug.Log(string.Format("material{0} ",m.name)); 
+		
 		}
-
-		for(int i=0;i<tamanioLista;i++){
-
-		Material m =MetodoInicial(listaSimbolos);
-		listaSimbolos2.Add(m);	//guardas	
-		listaSimbolos.Remove(m);//removes	
-		Debug.Log(string.Format("material agregado {0},lista final{1}",m,listaSimbolos2)); 
-		}
-
-	//	Debug.Log("");
-		for(int i=0;i<listaSimbolos2.Count;i++){
-			Debug.Log(string.Format("lista final{0}",listaSimbolos2[i])); 
-		}
+		//falta aplicarlo
+		onFinish(CurrentListaSimbolos);
+	}
+	void Start () {
+		
 
 	}
 	Material MetodoInicial(List<Material>l){
