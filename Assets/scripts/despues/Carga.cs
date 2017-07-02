@@ -8,7 +8,7 @@ using UnityEngine;
 public class Carga : MonoBehaviour {
 	
 	public List<Material>listaSimbolos=new List<Material>(); 
-	public delegate void finish( List<Material> material_lista);
+	public delegate void finish( Material material_lista);
 	public static int index=0;
 
 	private List<Material>CurrentListaSimbolos=new List<Material>(); 
@@ -18,33 +18,40 @@ public class Carga : MonoBehaviour {
 	void Awake(){
 		int tamanioLista=listaSimbolos.Count;
 		//Random_list();	
-		List<Material> aux=listaSimbolos;
+		print("tamanio "+tamanioLista);
 		for(int i=0;i<tamanioLista;i++){
-			Material m =MetodoInicial(listaSimbolos);
-			CurrentListaSimbolos.Add(m);	//guardas	
-			listaSimbolos.Remove(m);//removes	
+			Material m =MetodoInicial(listaSimbolos);//saca una carta al azar
+			CurrentListaSimbolos.Add(m);	//la guardas	
+			listaSimbolos.Remove(m);//la removes de la lista 	
 			//Debug.Log(string.Format("material{0} ",m.name)); 
-		
 		}
-		//falta aplicarlo
-		onFinish(CurrentListaSimbolos);
+		//for(int i=0;i<CurrentListaSimbolos.Count;i++){
+		//	onFinish(CurrentListaSimbolos[i]);
+		//}
 	}
-	void Start () {
-		
 
-	}
 	Material MetodoInicial(List<Material>l){
-		//hacer un random de lo q te mandan
-		//ggeneras una salida random
+		//devolves una carta al azar
 		int n=l.Count;
 		int r=Random.Range(0,n);
-
 		return l[r];
 
 	}
 	// Update is called once per frame
 
+	public Material GetCarta{
 
+		get{	
+			Material m=null;
+			if(CurrentListaSimbolos.Count>0){
+			 m=CurrentListaSimbolos[0];//saco primer material
+			CurrentListaSimbolos.Remove(m);//saco matererial d la lista
+			print("material "+m.name);
+			}
+
+			return m;
+		}
+	}
 
 
 }
