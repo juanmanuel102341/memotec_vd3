@@ -25,9 +25,7 @@ public class Carga : MonoBehaviour {
 			listaSimbolos.Remove(m);//la removes de la lista 	
 			//Debug.Log(string.Format("material{0} ",m.name)); 
 		}
-		//for(int i=0;i<CurrentListaSimbolos.Count;i++){
-		//	onFinish(CurrentListaSimbolos[i]);
-		//}
+	
 	}
 
 	Material MetodoInicial(List<Material>l){

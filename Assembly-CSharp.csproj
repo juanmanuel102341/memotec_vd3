@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\antes\Boton.cs" />
-     <Compile Include="Assets\scripts\antes\Carta.cs" />
-     <Compile Include="Assets\scripts\antes\Main.cs" />
      <Compile Include="Assets\scripts\despues\Carga.cs" />
+     <Compile Include="Assets\scripts\despues\Carta.cs" />
+     <Compile Include="Assets\scripts\despues\Comparacion.cs" />
      <Compile Include="Assets\scripts\despues\Descarga.cs" />
+     <Compile Include="Assets\scripts\despues\Deteccion.cs" />
+     <Compile Include="Assets\scripts\despues\Gui.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
