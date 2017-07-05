@@ -8,6 +8,7 @@ public class Descarga : MonoBehaviour {
 	private Material materialCarta=null;
 	private Carga carga;
 	private Carta currentCarta;
+
 	void Awake(){
 		materialCarta=GetComponent<MeshRenderer>().material;//guardamos material carta
 		print("material carta  c "+materialCarta.name);
@@ -26,6 +27,7 @@ public class Descarga : MonoBehaviour {
 
 		//GetComponent<MeshRenderer>().material=materialSimbolo;
 		}
+
 
 
 }

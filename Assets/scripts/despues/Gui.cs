@@ -4,6 +4,7 @@ using UnityEngine;
 public class Gui : MonoBehaviour {
 
 	public static int correctas=0;
+
 	void Start () {
 		
 	}

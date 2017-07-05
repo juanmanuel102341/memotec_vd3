@@ -1,14 +1,10 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 public class Deteccion : MonoBehaviour {
 	private Descarga descarga;
 	private MeshRenderer mesh;
 	private Comparacion comparacion;
 	private Carta currentCarta;
 	void Awake() {
-		
 		descarga=GetComponent<Descarga>();
 		mesh=GetComponent<MeshRenderer>();
 		comparacion=GameObject.FindGameObjectWithTag("comparacion").GetComponent<Comparacion>();
@@ -17,16 +13,10 @@ public class Deteccion : MonoBehaviour {
 		}
 		currentCarta=GetComponent<Carta>();
 	}
-
-	
-
 	void OnMouseDown() {
-		
 		Comparacion.clicks++;
-
 		currentCarta.VueltaSimbolo();
 		print("click "+Comparacion.clicks);
-
 		switch(Comparacion.clicks){
 		case 1:
 			print("entrando 1");
@@ -35,17 +25,12 @@ public class Deteccion : MonoBehaviour {
 			break;
 		case 2:
 			print("entrando 2");
+			currentCarta.DeactiveCollider();//desactivo collider 2da carta
 			comparacion.setCarta2=currentCarta;
-			comparacion.ComparacionCartas();//comparamos
+			comparacion.setBool=true;//activamos bolleano del timer, cuando cumple tiempo ahi se compara
 			Comparacion.clicks=0;//reset contador
+//			Comparacion.avisoOff();//setiamos colliders
 			break;
-
 		}
-				//comparacion.ComparacionCartas(current);
-
 	}
-
-
-
-
 }

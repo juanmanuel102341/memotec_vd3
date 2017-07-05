@@ -12,7 +12,7 @@ public class Carta : MonoBehaviour {
 		materialCarta=mesh.material;
 		}
 	public void VueltaCarta(){
-	
+		print("carta vuelta");
 		mesh.material=materialCarta;	
 	
 	}

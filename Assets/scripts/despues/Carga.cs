@@ -13,10 +13,10 @@ public class Carga : MonoBehaviour {
 
 	private List<Material>CurrentListaSimbolos=new List<Material>(); 
 	private List<int>currentIndex2=new List<int>();
-
+	private int tamanioLista;
 	public static event finish onFinish;
 	void Awake(){
-		int tamanioLista=listaSimbolos.Count;
+		tamanioLista=listaSimbolos.Count;
 		//Random_list();	
 		print("tamanio "+tamanioLista);
 		for(int i=0;i<tamanioLista;i++){
@@ -50,6 +50,11 @@ public class Carga : MonoBehaviour {
 			return m;
 		}
 	}
+	public int getCantidadTotalCartas{
+		get {
+			return tamanioLista;
+			}
+	} 
 
 
 }
