@@ -8,6 +8,7 @@ TagManager:
   - fondo
   - boton
   - cargaMaterial
+  - comparacion
   layers:
   - Default
   - TransparentFX

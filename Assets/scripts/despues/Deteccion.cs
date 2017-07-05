@@ -20,16 +20,17 @@ public class Deteccion : MonoBehaviour {
 		switch(Comparacion.clicks){
 		case 1:
 			print("entrando 1");
-			comparacion.setCarta1=currentCarta;
+			comparacion.setCarta1=this.gameObject;
 			currentCarta.DeactiveCollider();//desactivamos collider
 			break;
 		case 2:
 			print("entrando 2");
-			currentCarta.DeactiveCollider();//desactivo collider 2da carta
-			comparacion.setCarta2=currentCarta;
+			//currentCarta.DeactiveCollider();//desactivo collider 2da carta
+			comparacion.setCarta2=this.gameObject;
 			comparacion.setBool=true;//activamos bolleano del timer, cuando cumple tiempo ahi se compara
+			comparacion.SetCollidersOf();//desactvamos colliders todas cartas
 			Comparacion.clicks=0;//reset contador
-//			Comparacion.avisoOff();//setiamos colliders
+		
 			break;
 		}
 	}

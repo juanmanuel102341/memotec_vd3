@@ -5,11 +5,12 @@ public class Carta : MonoBehaviour {
 	private MeshRenderer mesh;
 	private Material materialSimbolo;
 	private Material materialCarta;
-
+	private bool salio=false;
 
 	void Awake () {
 		mesh=GetComponent<MeshRenderer>();
 		materialCarta=mesh.material;
+		salio=false;
 		}
 	public void VueltaCarta(){
 		print("carta vuelta");
@@ -39,6 +40,17 @@ public class Carta : MonoBehaviour {
 	public Material setSimbol{
 		set {
 			materialSimbolo=value;
+		}
+	}
+	public bool setBoolSalio{
+		set{
+			salio=value;
+		}
+
+	}
+	public bool getBoolSalio{
+		get{
+			return salio;
 		}
 	}
 

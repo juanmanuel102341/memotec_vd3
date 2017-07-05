@@ -1,16 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class SetCollider : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+	private BoxCollider2D box;
+	private Carta carta;
+	void Awake () {
+		Comparacion.avisoOff+=OnOfColliders;
+		Comparacion.avisoOn+=OnActiveColliders;
+		carta=this.transform.gameObject.GetComponent<Carta>();
+		box=GetComponent<BoxCollider2D>();
 		
 	}
+	void OnOfColliders(){
+		print("collider of");
+		box.enabled=false;
+	}
+	void OnActiveColliders(){
+		
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+		if(carta.getBoolSalio==false){
+			print("colliders on");
+		box.enabled=true;
+		}
+	} 
+
 }
