@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Gui.correctas>=carga.getCantidadTotalCartas){
+		print("CORRECTAS "+Gui.correctas);
+		print("TOTAL CARTAS "+carga.getCantidadTotalCartas/2);
+		if(Gui.correctas>=carga.getCantidadTotalCartas/2){
 		
 			print("ganaste");
 		}

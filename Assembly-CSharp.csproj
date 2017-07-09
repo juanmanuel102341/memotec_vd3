@@ -52,7 +52,10 @@
      <Compile Include="Assets\scripts\despues\Comparacion.cs" />
      <Compile Include="Assets\scripts\despues\Descarga.cs" />
      <Compile Include="Assets\scripts\despues\Deteccion.cs" />
+     <Compile Include="Assets\scripts\despues\GameManager.cs" />
      <Compile Include="Assets\scripts\despues\Gui.cs" />
+     <Compile Include="Assets\scripts\despues\SetCollider.cs" />
+     <Compile Include="Assets\scripts\despues\SoundManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

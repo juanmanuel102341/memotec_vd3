@@ -15,9 +15,11 @@ public class Comparacion : MonoBehaviour {
 	public static event AvisoOn avisoOff;
 	public static event AvisoOn avisoOn;
 	public static event AvisoOn SetObjetOff;//apago el vento de la carta cuando salio, para q despues n se active
+	public SoundManager sound;
 
-
-
+	void Awake(){
+		
+	}
 	void Start () {
 		timeGame=0;
 		time=0;
@@ -33,6 +35,7 @@ public class Comparacion : MonoBehaviour {
 
 				if(ComparacionCartas()){
 					print("verdadero ");
+					sound.PlaySoundCorrect();
 					compC1.DeactiveCollider();
 					compC2.DeactiveCollider();
 					compC1.setBoolSalio=true;
@@ -42,21 +45,15 @@ public class Comparacion : MonoBehaviour {
 					c1.GetComponent<Deteccion>().enabled=false;
 					c2.GetComponent<Deteccion>().enabled=false;
 
-
-				//	c1=null;
-				//	c2=null;
-				//	compC1=null;
-				//	compC2=null;
 				}else{
 					print("incorrecto");
+					sound.PlaySoundInCorrect();
 					compC1.VueltaCarta();
 					compC2.VueltaCarta();
-					//c1.ActiveCollider();
-					//c2.ActiveCollider();
+				
 					print("CARTA 1 "+compC1.getSimbolName);
 					print("CARTA 2 "+compC2.getSimbolName);
 
-				//	avisoOn();//aviso a set colliders para q se activen colliders de cartas
 				}
 				avisoOn();//aviso a set colliders para q se activen colliders de cartas
 				active=true;
