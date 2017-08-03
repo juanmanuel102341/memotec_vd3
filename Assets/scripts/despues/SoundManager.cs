@@ -11,11 +11,6 @@ public class SoundManager : MonoBehaviour {
 		audioMusicFondo.Play();
 	}
 	
-
-	void Update () {
-		
-	}
-
 	public void PlaySoundCorrect(){
 	
 		correcta.Play();

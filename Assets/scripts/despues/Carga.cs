@@ -10,32 +10,52 @@ public class Carga : MonoBehaviour {
 	public List<Material>listaSimbolos=new List<Material>(); 
 	public delegate void finish( Material material_lista);
 	public static int index=0;
-
+	//private List<Material>auxListMaterial=new List<Material>();
+	//private List<Material>auxListMaterial2=new List<Material>();
 	private List<Material>CurrentListaSimbolos=new List<Material>(); 
-	private List<int>currentIndex2=new List<int>();
-	private int tamanioLista;
+	//private List<int>currentIndex2=new List<int>();
+	private int tamanioLista=0;
+
 	public static event finish onFinish;
 	void Awake(){
+	//no entiendo porque se me borrar la lista simbolos, ya q la q utilizo es una auxiliar, actua como si estuviesen emparentadas, es una puta variable
+
+	//	auxListMaterial=listaSimbolos;	
+	//	auxListMaterial2=listaSimbolos;
 		tamanioLista=listaSimbolos.Count;
-		//Random_list();	
-		print("tamanio "+tamanioLista);
+
+		Inicio();
+	}
+	public void Inicio(){
+		print("lista simbolos existencia "+listaSimbolos.Count);
+		List<Material> aux=new List<Material>();
+	
+		for(int i=0;i<listaSimbolos.Count;i++){
+			aux.Add(listaSimbolos[i]);
+			print("var "+aux[i]);
+		}
+
+
 		for(int i=0;i<tamanioLista;i++){
-			Material m =MetodoInicial(listaSimbolos);//saca una carta al azar
+			
+			print("tamanio lista original "+listaSimbolos.Count);
+			Material m =MetodoInicial(aux);//saca una carta al azar
 			CurrentListaSimbolos.Add(m);	//la guardas	
-			listaSimbolos.Remove(m);//la removes de la lista 	
+			aux.Remove(m);//la removes de la lista	
+
 			//Debug.Log(string.Format("material{0} ",m.name)); 
 		}
-	
 	}
 
-	Material MetodoInicial(List<Material>l){
+	Material MetodoInicial(List<Material>a){
 		//devolves una carta al azar
-		int n=l.Count;
+		int n=a.Count;
 		int r=Random.Range(0,n);
-		return l[r];
+	
+		return a[r];
 
 	}
-	// Update is called once per frame
+
 
 	public Material GetCarta{
 
@@ -44,7 +64,8 @@ public class Carga : MonoBehaviour {
 			if(CurrentListaSimbolos.Count>0){
 			 m=CurrentListaSimbolos[0];//saco primer material
 			CurrentListaSimbolos.Remove(m);//saco matererial d la lista
-			print("material "+m.name);
+			//	CurrentListaSimbolos.
+			
 			}
 
 			return m;

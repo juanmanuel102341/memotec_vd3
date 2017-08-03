@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SetCollider : MonoBehaviour {
 	private BoxCollider2D box;
@@ -19,7 +18,7 @@ public class SetCollider : MonoBehaviour {
 		
 	
 		if(carta.getBoolSalio==false){
-			print("colliders on");
+		//	print("colliders on");
 		box.enabled=true;
 		}
 	} 

@@ -7,14 +7,19 @@ public class Gui : MonoBehaviour {
 	public Text numCorrectas;
 	public Text numTime;
 	private Comparacion comparacion;
+
+
 	void Awake () {
 		comparacion=GameObject.FindGameObjectWithTag("comparacion").GetComponent<Comparacion>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 		numCorrectas.text=correctas.ToString();
-		numTime.text=comparacion.getTimeGame.ToString();
+		numTime.text=comparacion.get_set_timeGame.ToString();
 	}
+
+
 }

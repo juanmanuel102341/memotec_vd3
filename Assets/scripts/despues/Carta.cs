@@ -12,8 +12,9 @@ public class Carta : MonoBehaviour {
 		materialCarta=mesh.material;
 		salio=false;
 		}
+
 	public void VueltaCarta(){
-		print("carta vuelta");
+//		print("carta vuelta");
 		mesh.material=materialCarta;	
 	
 	}
@@ -23,15 +24,18 @@ public class Carta : MonoBehaviour {
 
 
 	public void DeactiveCollider(){
-		
-		BoxCollider2D aux=this.GetComponent<BoxCollider2D>();
-		aux.enabled=false;
-	}
-	public void ActiveCollider(){
+	
 
 		BoxCollider2D aux=this.GetComponent<BoxCollider2D>();
-		aux.enabled=true;
+		aux.enabled=false;
+	
 	}
+	public void ActiveCollider(){
+		if(!salio){
+		BoxCollider2D aux=this.GetComponent<BoxCollider2D>();
+		aux.enabled=true;
+		}
+		}
 	public string getSimbolName{
 		get{
 			return materialSimbolo.name;
