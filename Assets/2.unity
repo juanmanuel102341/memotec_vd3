@@ -3575,7 +3575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carga: {fileID: 1821595324}
-  timeLoose: 3
+  timeLoose: 10
   objJuego: {fileID: 481705657}
   guiLoose: {fileID: 1514438547}
   guiWin: {fileID: 893817499}

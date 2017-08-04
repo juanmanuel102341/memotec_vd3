@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	private Comparacion comparacionObj;
 	public Carga carga;
+	private GameObject []aCards;
 	public int timeLoose;
 	public delegate void ResetBool();
 	public static event ResetBool onResetBool;//evento para activar colliders cartas 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
 
 	public static bool gameOver=false;
 	void Awake () {
+		
 		comparacionObj=GameObject.FindGameObjectWithTag("comparacion").GetComponent<Comparacion>();
 		carga=GameObject.FindGameObjectWithTag("cargaMaterial").GetComponent<Carga>();
 		GameObject[] objs=GameObject.FindGameObjectsWithTag("carta");
@@ -31,6 +33,13 @@ public class GameManager : MonoBehaviour {
 		PlayAgain.eventWin+=onWinReset;
 		PlayAgain.eventLoose+=onLooseReset;
 		gameOver=false;
+		aCards=new GameObject[carga.getCantidadTotalCartas];
+		aCards=GameObject.FindGameObjectsWithTag("carta");
+		if(aCards!=null){
+			print("cartas cargadas "+aCards.Length);
+		}else{
+			print("WARNING CARTAS NO CARGADAS");
+		}
 	}
 
 	
@@ -92,7 +101,11 @@ public class GameManager : MonoBehaviour {
 		comparacionObj.get_set_timeGame=0;
 		objJuego.SetActive(true);
 		gameOver=false;
-		carga.Inicio();
+		carga.Inicio();//genero una nueva mezcla de cartas
+		for(int i =0;i<aCards.Length;i++){
+			aCards[i].GetComponent<Descarga>().DescargaCarta();//descargo carta	
+		}
+
 	}
 
 }

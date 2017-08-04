@@ -27,22 +27,23 @@ public class Carga : MonoBehaviour {
 		Inicio();
 	}
 	public void Inicio(){
-		print("lista simbolos existencia "+listaSimbolos.Count);
+		//print("lista simbolos existencia "+listaSimbolos.Count);
+		//print("current SIMBOLOS "+CurrentListaSimbolos.Count);
 		List<Material> aux=new List<Material>();
 	
 		for(int i=0;i<listaSimbolos.Count;i++){
 			aux.Add(listaSimbolos[i]);
-			print("var "+aux[i]);
+//			print("var "+aux[i]);
 		}
 
 
 		for(int i=0;i<tamanioLista;i++){
 			
-			print("tamanio lista original "+listaSimbolos.Count);
+		//	print("tamanio lista original "+listaSimbolos.Count);
 			Material m =MetodoInicial(aux);//saca una carta al azar
 			CurrentListaSimbolos.Add(m);	//la guardas	
 			aux.Remove(m);//la removes de la lista	
-
+			print(i+") "+m.name);
 			//Debug.Log(string.Format("material{0} ",m.name)); 
 		}
 	}
@@ -61,6 +62,7 @@ public class Carga : MonoBehaviour {
 
 		get{	
 			Material m=null;
+//			print("cantidad simbolos "+CurrentListaSimbolos.Count);
 			if(CurrentListaSimbolos.Count>0){
 			 m=CurrentListaSimbolos[0];//saco primer material
 			CurrentListaSimbolos.Remove(m);//saco matererial d la lista

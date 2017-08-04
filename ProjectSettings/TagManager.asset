@@ -9,6 +9,8 @@ TagManager:
   - boton
   - cargaMaterial
   - comparacion
+  - guiWin
+  - guiLoose
   layers:
   - Default
   - TransparentFX

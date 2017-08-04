@@ -11,7 +11,7 @@ public class SetCollider : MonoBehaviour {
 		
 	}
 	void OnOfColliders(){
-		print("collider of");
+//		print("collider of");
 		box.enabled=false;
 	}
 	void OnActiveColliders(){
