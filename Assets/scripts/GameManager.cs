@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void onWinReset(){
 		print("reset desde game manager win");
+		Reseteo();
 	}
 	void onLooseReset(){
 		print("perdiste desde game manager");
@@ -82,20 +83,13 @@ public class GameManager : MonoBehaviour {
 		}else if(Gui.correctas>=carga.getCantidadTotalCartas/2){
 			guiWin.SetActive(false);
 		}
-
-			
-		print("cartas cantidad "+listaCartas.Count);
+		//print("cartas cantidad "+listaCartas.Count);
 		for(int i=0;i<listaCartas.Count;i++){
 			Carta aux=listaCartas[i].GetComponent<Carta>();
-
 			aux.setBoolSalio=false;//booleano q salio la carta
 			aux.VueltaCarta();//vuelta carta
 			aux.ActiveCollider();//colldiers
-			//aux.setSimbol=carga.GetCarta;//obtengo simbolo nuevamente random
-			//listaCartas[i].GetComponent<Deteccion>().enabled=true;
-			//listaCartas[i].GetComponent<SetCollider>().enabled=true;
-			//listaCartas[i].GetComponent<Descarga>().DescargaCarta();
-		}
+			}
 		Comparacion.clicks=0;
 		Gui.correctas=0;
 		comparacionObj.get_set_timeGame=0;
@@ -103,7 +97,7 @@ public class GameManager : MonoBehaviour {
 		gameOver=false;
 		carga.Inicio();//genero una nueva mezcla de cartas
 		for(int i =0;i<aCards.Length;i++){
-			aCards[i].GetComponent<Descarga>().DescargaCarta();//descargo carta	
+			aCards[i].GetComponent<Descarga>().DescargaCarta();//descargo simbolos cartas	
 		}
 
 	}
