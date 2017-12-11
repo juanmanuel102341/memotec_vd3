@@ -46,17 +46,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayAgain.cs" />
-     <Compile Include="Assets\scripts\antes\Boton.cs" />
-     <Compile Include="Assets\scripts\despues\Carga.cs" />
-     <Compile Include="Assets\scripts\despues\Carta.cs" />
-     <Compile Include="Assets\scripts\despues\Comparacion.cs" />
-     <Compile Include="Assets\scripts\despues\Descarga.cs" />
-     <Compile Include="Assets\scripts\despues\Deteccion.cs" />
-     <Compile Include="Assets\scripts\despues\GameManager.cs" />
-     <Compile Include="Assets\scripts\despues\Gui.cs" />
-     <Compile Include="Assets\scripts\despues\SetCollider.cs" />
-     <Compile Include="Assets\scripts\despues\SoundManager.cs" />
+     <Compile Include="Assets\scripts\Boton.cs" />
+     <Compile Include="Assets\scripts\Carga.cs" />
+     <Compile Include="Assets\scripts\Carta.cs" />
+     <Compile Include="Assets\scripts\Comparacion.cs" />
+     <Compile Include="Assets\scripts\Descarga.cs" />
+     <Compile Include="Assets\scripts\Deteccion.cs" />
+     <Compile Include="Assets\scripts\GameManager.cs" />
+     <Compile Include="Assets\scripts\Gui.cs" />
+     <Compile Include="Assets\scripts\PlayAgain.cs" />
+     <Compile Include="Assets\scripts\SetCollider.cs" />
+     <Compile Include="Assets\scripts\SoundManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
